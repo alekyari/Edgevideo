@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600&family=Nunito:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet"> -->
+    <script src="./script.js" type="module"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav_desktop">
+        <ul class="nav_cont_desktop">
+          <li><img
+              class="logo"
+              src="./images/edge-video.png"
+              alt=""
+              class="logo"
+            /></li>
+          <li><a href="#" >Home</a></li>
+          <li><a href="#" >Store</a></li>
+          <li><a href="#" >Canali</a></li>
+          <li>
+            <a href="#" style="margin-right: 10px;">
+              Categorie</a>
+              <div class="dropdownarrow"></div>
+            
+          </li>
+          <li><a href="#" >Area Personale</a></li>
+        </ul>
+      </div>
+      <div class="nav_mobile"> 
+        <img  class="logo"
+              src="./images/edge-video.png"
+              alt=""
+              class="logo"/>
+              <div id="mobile_menu"><h3 >Esplora</h3></div>
+              
+              <div class="dropdownarrow"></div>
+        <ul class="nav_cont_mobile">
+          <li><a href="#" >Home</a></li>
+          <li><a href="#" >Store</a></li>
+          <li><a href="#" >Canali</a></li>
+          <li>
+            <a href="#" style="margin-right: 10px;">
+              Categorie</a>
+              <div class="dropdownarrow"></div>
+          </li>
+          <li><a href="#" >Area Personale</a></li>
+        </ul>
+      </div>
+      <div class="nav_user">
+        <ul class="user_cont">
+          <li>
+            <img
+              src="/images/search_icon.png"
+              alt="search icon"
+              class="search_icon"
+            />
+          </li>
+          <li>
+            <img 
+              src="/images/user_icon.png"
+              alt="user icon"
+              class="user_icon"
+            />
+          </li>
+          <li id="user_toggle">
+            <h3 id="utente" style="margin-right: 10px;">Utente </h3><div class="dropdownarrow"></div>
+            
+          </li>
+          </div>
+        </ul>
+        <div class="tendina_login">
+          <form id="login_form">
+            <div class="formGroup">
+                <label for="username">Username:</label>
+                <input id="username" name="username" placeholder="username" type="text"/>
+                <label for="password">Password:</label>
+                <input id="password" name="password" placeholder="*******" type="password"/>
+                <input id="login_button" type="submit" value="Accedi">
+            </div>
+            
+          </form>
+        </div>
+        <div class="tendina_logout">
+        <form id="logout_form">
+          <div class="formGroup">
+           <input id="logout_button" type="submit" value="Esci">
+          </div>
+          
+        </form>
+        </div>
+    </nav>
+    <hero class="hero">
+      
+    </hero>
+    <main class="tvs">
+      <h2 id="titolo_serieTV">Le serie TV più popolari</h2>
+      <section class="popular"></section>
+      <h2 id="titolo_serieTV">In onda oggi</h2>
+      <section class="airToday"></section>
+      <h2 id="titolo_serieTV">I più votati</h2>
+      <section class="top_rated"></section>
+      
+    </main>
+    <footer>
+      <div><img
+        class="logo"
+        src="./images/edge-video.png"
+        alt=""
+        class="logo"
+      /></div>
+      <div>
+      <ul class="foot_cont">
+      <li><a href="#">Termini di utilizzo e informativa sulla privacy</a></li>   
+      <li><a href="#">Invia commenti</a></li>   
+      <li><a href="#">Informativa sui cookie</a></li>   
+      <li><h3>© 1996-2023, Inc. o società affiliate</h3></li>   
+      </ul>
+      </div>
+    </footer>
+    <div class="modal">
+      <div class="overlay"></div>
+    </div>
+  </body>
+</html>
