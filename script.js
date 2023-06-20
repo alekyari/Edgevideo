@@ -9,7 +9,7 @@ import { qS, qSA, cE, heroGen, modalGen, tvCardGen, tvSpecsGen, popularEl, topRa
 
  
   // tendina menu mobile
-   selMobMenu.addEventListener("click",() => {
+  selMobMenu.addEventListener("click",() => {
   mobMenu.classList.toggle("show_cont_mobile")});
 
   // tendina menu mobile
@@ -29,26 +29,28 @@ import { qS, qSA, cE, heroGen, modalGen, tvCardGen, tvSpecsGen, popularEl, topRa
 
 
 
-
-  GET("tv","popular")
-  .then((data) => {
-   let newData = data.results.map((tv) => (tv.poster_path));
-    sessionStorage.setItem("images", newData)
-  })
-
-
-const images = sessionStorage.getItem("images").split(",")
-let imgCounter = 1;
-
+// scrivere funzione asincronca che fa la get poi scrive sul session storage poi fa la hero slider, prima di tutto qeusto c'è ilblocco per appendere gli elementi
+//if(sessionStorage.getItem ("images")== null){wrapperImgEl.setAttribute("src", `./images/edge-video.png`);};
 
 wrapperEl.className = "hero_wrapper";
-wrapperImgEl.setAttribute("src", `https://image.tmdb.org/t/p/original${images[0]}`);
+wrapperImgEl.setAttribute("src", `./images/edge-video.png`);
 wrapperImgEl.setAttribute("alt", `image 0`);
 wrapperEl.appendChild(wrapperImgEl);
 hero.appendChild(wrapperEl);
+let imgCounter = 1;
 
 
-const heroSlider = () =>{ setInterval(() => {
+
+async function myHero (){
+await GET("tv","popular")
+  .then((data) => {
+   let newData = data.results.map((tv) => (tv.poster_path));
+    sessionStorage.setItem("images", newData)
+  });
+
+ const images = await sessionStorage.getItem ("images").split(",");
+
+ const heroSlider = () =>{ setInterval(() => {
   wrapperImgEl.src = `https://image.tmdb.org/t/p/original${images[imgCounter]}`;
   wrapperImgEl.alt = `image ${imgCounter}`;
   imgCounter++;
@@ -56,10 +58,12 @@ const heroSlider = () =>{ setInterval(() => {
   if (imgCounter >= images.length) {
     imgCounter = 0;
   }
-}, 3000);}
+}, 3000);};
+heroSlider();}
 
-heroSlider();
 
+
+myHero();
 
 
 // hero
